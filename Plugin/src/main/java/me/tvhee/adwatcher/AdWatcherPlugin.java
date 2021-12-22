@@ -7,7 +7,7 @@ public class AdWatcherPlugin extends JavaPlugin
 	@Override
 	public void onEnable()
 	{
-        getLogger().info("has been enabled!");
+		getLogger().info("has been enabled!");
         getLogger().info("made by Tvhee!");
 	}
 
