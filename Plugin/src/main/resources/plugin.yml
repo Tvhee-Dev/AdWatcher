@@ -1,0 +1,8 @@
+name: AdWatcher
+main: me.tvhee.adwatcher.AdWatcherPlugin
+version: 1.0.0
+author: Tvhee
+commands:
+  ad:
+    description: Watch an ad
+    usage: /ad
