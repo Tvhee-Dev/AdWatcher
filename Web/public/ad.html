@@ -1,0 +1,147 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <!-- Required Meta Tags -->
+        <meta charset="utf-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1" />
+
+        <!-- Start Title -->
+        <title>CIVSNETWORK</title>
+        <!-- EDIT THIS ONE -->
+        <!-- End Title -->
+
+        <!-- Start Required Links -->
+        <!-- https://fontawesome.com/ -->
+        <link
+            rel="stylesheet"
+            href="https://kit-free.fontawesome.com/releases/latest/css/free.min.css"
+            media="all"
+        />
+        <!-- https://bulma.io/ -->
+        <link rel="stylesheet" href="/static/assets/css/bulma.min.css" />
+        <!-- Custom CSS -->
+        <link rel="stylesheet" href="/static/assets/css/style.css" />
+        <!-- End Required Links -->
+
+        <script
+            src="https://code.jquery.com/jquery-3.6.0.min.js"
+            integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4="
+            crossorigin="anonymous"
+        ></script>
+    </head>
+
+    <body>
+        <!-- Start Navbar -->
+        <nav
+            id="navbar"
+            class="navbar fixed is-transparent"
+            role="navigation"
+            aria-label="main navigation"
+        >
+            <div class="container">
+                <div class="navbar-brand">
+                    <!-- Start Navbar Brand -->
+                    <a
+                        class="navbar-item has-text-weight-bold server-name"
+                        href="index.html"
+                    ></a>
+                    <!-- End Navbar Brand -->
+                    <a
+                        role="button"
+                        class="navbar-burger burger"
+                        aria-label="menu"
+                        aria-expanded="false"
+                        data-target="navbarBasicExample"
+                    >
+                        <span aria-hidden="true"></span>
+                        <span aria-hidden="true"></span>
+                        <span aria-hidden="true"></span>
+                    </a>
+                </div>
+                <!-- Start Navbar Menu -->
+                <div id="navbarBasicExample" class="navbar-menu">
+                    <div class="navbar-start">
+                        <a href="index.html" class="navbar-item"> Home </a>
+                        <a href="games.html" class="navbar-item"> Games </a>
+                        <a href="/forums" class="navbar-item"> Forums </a>
+                        <a href="/store" class="navbar-item"> Store </a>
+                        <a href="vote.html" class="navbar-item"> Vote </a>
+                    </div>
+                    <!-- Start Navbar End -->
+                    <div class="navbar-end">
+                        <a id="ip-button" class="navbar-item">
+                            <strong
+                                class="has-text-primary server-ip is-uppercase"
+                            ></strong>
+                        </a>
+                    </div>
+                    <!-- End Navbar End -->
+                </div>
+                <!-- End Navbar Menu -->
+            </div>
+        </nav>
+        <!-- End Navbar -->
+
+        <!-- Start Hero -->
+        <section class="hero has-background-image is-medium">
+            <div class="hero-body">
+                <div class="container has-text-centered">
+                    <!-- Start Hero Title -->
+                    <p class="title is-1 has-text-white">
+                        Watch an ad to recieve your rewards!
+                    </p>
+                    <!-- End Hero Title -->
+
+                    <!-- Start Hero Subtitle -->
+                    <p class="subtitle has-text-white" id="subtitle">
+                        <script>
+                            (async () => {
+                                let uuid = window.location.pathname.replace(
+                                    /\/ad\//g,
+                                    ""
+                                );
+                                console.log(
+                                    "https://sessionserver.mojang.com/session/minecraft/profile/" +
+                                        uuid
+                                );
+                                $.getJSON(
+                                    "http://www.whateverorigin.org/get?url=" +
+                                        encodeURIComponent(
+                                            "https://sessionserver.mojang.com/session/minecraft/profile/" +
+                                                uuid
+                                        ) +
+                                        "&callback=?",
+                                    function (data) {
+                                        document.getElementById('subtitle').innerText = "You are currently watching an ad for " + data.contents.name + ".\nIf this isn't you, dont watch the ad."
+                                    }
+                                );
+                            })();
+                        </script>
+                    </p>
+                    <!-- End Hero Subtitle -->
+                </div>
+            </div>
+        </section>
+        <!-- End Hero -->
+
+        <!-- Start Footer -->
+        <footer class="footer">
+            <div class="content has-text-centered">
+                <p>
+                    <strong
+                        >CIVSNETWORK &copy; 2019 &mdash; All rights reserved
+                    </strong>
+                    <br />
+                    <small>
+                        <span class="server-name"></span>
+                        server is in no way affiliated with Mojang, AB.</small
+                    >
+                </p>
+            </div>
+        </footer>
+        <!-- End Footer -->
+
+        <!-- Include Scripts -->
+        <script src="/static/assets/js/app.js"></script>
+    </body>
+</html>

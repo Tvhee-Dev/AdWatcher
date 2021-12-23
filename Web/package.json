@@ -1,0 +1,16 @@
+{
+  "name": "adwatcher_web",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "start": "node index.js"
+  },
+  "author": "Leo",
+  "license": "ISC",
+  "dependencies": {
+    "chalk": "^4.0.0",
+    "dotenv": "^10.0.0",
+    "express": "^4.17.2"
+  }
+}
