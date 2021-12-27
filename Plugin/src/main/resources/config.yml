@@ -1,0 +1,2 @@
+plugin:
+  ad-website: "https://www.myawesomewebsite.com?user=%uuid%&name=%name%"
