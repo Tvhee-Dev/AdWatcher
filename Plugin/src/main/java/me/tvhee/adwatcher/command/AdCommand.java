@@ -25,7 +25,7 @@ public class AdCommand implements CommandExecutor
 	{
 		if(sender instanceof Player player)
 		{
-			String site = plugin.getConfig().getString("plugin.ad-website", "").replaceAll("%uuid%", player.getUniqueId().toString()).replaceAll("%name%", player.getName());
+			String site = plugin.getConfig().getString("plugin.ad-website", "");
 
 			if(site.equals(""))
 			{
@@ -49,6 +49,7 @@ public class AdCommand implements CommandExecutor
 				return true;
 			}
 
+			site = site.replaceAll("%reward-id%", String.valueOf(pendingReward.getId()));
 			player.sendMessage(ChatColor.GOLD + "Warning: " + ChatColor.YELLOW + "You must be online in this server to claim your reward!");
 			TextComponent websiteComponent = new TextComponent(ChatColor.GREEN + "Click" + ChatColor.GOLD + " here" + ChatColor.GREEN + " to watch your ad!");
 			websiteComponent.setClickEvent(new ClickEvent(ClickEvent.Action.OPEN_FILE, site));
