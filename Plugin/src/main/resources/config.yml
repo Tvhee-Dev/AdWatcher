@@ -1,2 +1,10 @@
 plugin:
-  ad-website: "https://www.myawesomewebsite.com?user=%uuid%&name=%name%"
+  ad-website: "https://www.myawesomewebsite.com/%reward-id%"
+  #Use a free port and make sure to open the port!
+  webserver: 9999
+  rewards:
+    #The name sent to the webserver and used to store the rewards
+    reward1:
+    #The name shown in-game
+    displayname: "Iron Ingot"
+    command: "/giveReward %player% iron_ingot 1"
